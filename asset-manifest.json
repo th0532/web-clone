@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/movie-app/static/css/main.53e70d4b.chunk.css",
-    "main.js": "/movie-app/static/js/main.52438281.chunk.js",
-    "main.js.map": "/movie-app/static/js/main.52438281.chunk.js.map",
-    "runtime-main.js": "/movie-app/static/js/runtime-main.1038dd57.js",
-    "runtime-main.js.map": "/movie-app/static/js/runtime-main.1038dd57.js.map",
-    "static/js/2.e8d616d4.chunk.js": "/movie-app/static/js/2.e8d616d4.chunk.js",
-    "static/js/2.e8d616d4.chunk.js.map": "/movie-app/static/js/2.e8d616d4.chunk.js.map",
-    "index.html": "/movie-app/index.html",
-    "precache-manifest.78276973536c944ef2ce38c693fdc44d.js": "/movie-app/precache-manifest.78276973536c944ef2ce38c693fdc44d.js",
-    "service-worker.js": "/movie-app/service-worker.js",
-    "static/css/main.53e70d4b.chunk.css.map": "/movie-app/static/css/main.53e70d4b.chunk.css.map",
-    "static/js/2.e8d616d4.chunk.js.LICENSE.txt": "/movie-app/static/js/2.e8d616d4.chunk.js.LICENSE.txt"
+    "main.css": "/airbnb/static/css/main.53e70d4b.chunk.css",
+    "main.js": "/airbnb/static/js/main.52438281.chunk.js",
+    "main.js.map": "/airbnb/static/js/main.52438281.chunk.js.map",
+    "runtime-main.js": "/airbnb/static/js/runtime-main.2ddfddf7.js",
+    "runtime-main.js.map": "/airbnb/static/js/runtime-main.2ddfddf7.js.map",
+    "static/js/2.e8d616d4.chunk.js": "/airbnb/static/js/2.e8d616d4.chunk.js",
+    "static/js/2.e8d616d4.chunk.js.map": "/airbnb/static/js/2.e8d616d4.chunk.js.map",
+    "index.html": "/airbnb/index.html",
+    "precache-manifest.9639fb9491c6517ae078840751859472.js": "/airbnb/precache-manifest.9639fb9491c6517ae078840751859472.js",
+    "service-worker.js": "/airbnb/service-worker.js",
+    "static/css/main.53e70d4b.chunk.css.map": "/airbnb/static/css/main.53e70d4b.chunk.css.map",
+    "static/js/2.e8d616d4.chunk.js.LICENSE.txt": "/airbnb/static/js/2.e8d616d4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1038dd57.js",
+    "static/js/runtime-main.2ddfddf7.js",
     "static/js/2.e8d616d4.chunk.js",
     "static/css/main.53e70d4b.chunk.css",
     "static/js/main.52438281.chunk.js"
