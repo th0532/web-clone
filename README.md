@@ -1,4 +1,12 @@
 ## Web-clone Airbnb
+## Skils
+React Hooks, Router
+
+## URL 
+<http://th0532.github.io/airbnb/>
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
