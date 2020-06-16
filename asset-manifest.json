@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/web-clone-airbnb/static/css/main.cb427e6d.chunk.css",
-    "main.js": "/web-clone-airbnb/static/js/main.72f1c9d6.chunk.js",
-    "main.js.map": "/web-clone-airbnb/static/js/main.72f1c9d6.chunk.js.map",
+    "main.css": "/web-clone-airbnb/static/css/main.ae532943.chunk.css",
+    "main.js": "/web-clone-airbnb/static/js/main.bfa7bd8c.chunk.js",
+    "main.js.map": "/web-clone-airbnb/static/js/main.bfa7bd8c.chunk.js.map",
     "runtime-main.js": "/web-clone-airbnb/static/js/runtime-main.c82694e0.js",
     "runtime-main.js.map": "/web-clone-airbnb/static/js/runtime-main.c82694e0.js.map",
-    "static/js/2.e8d616d4.chunk.js": "/web-clone-airbnb/static/js/2.e8d616d4.chunk.js",
-    "static/js/2.e8d616d4.chunk.js.map": "/web-clone-airbnb/static/js/2.e8d616d4.chunk.js.map",
+    "static/css/2.a1840750.chunk.css": "/web-clone-airbnb/static/css/2.a1840750.chunk.css",
+    "static/js/2.32b4de34.chunk.js": "/web-clone-airbnb/static/js/2.32b4de34.chunk.js",
+    "static/js/2.32b4de34.chunk.js.map": "/web-clone-airbnb/static/js/2.32b4de34.chunk.js.map",
     "index.html": "/web-clone-airbnb/index.html",
-    "precache-manifest.b4e9e5bee9628a162d06ef760e858fa2.js": "/web-clone-airbnb/precache-manifest.b4e9e5bee9628a162d06ef760e858fa2.js",
+    "precache-manifest.09a299b84fb19ed8b73907c4a686c97a.js": "/web-clone-airbnb/precache-manifest.09a299b84fb19ed8b73907c4a686c97a.js",
     "service-worker.js": "/web-clone-airbnb/service-worker.js",
-    "static/css/main.cb427e6d.chunk.css.map": "/web-clone-airbnb/static/css/main.cb427e6d.chunk.css.map",
-    "static/js/2.e8d616d4.chunk.js.LICENSE.txt": "/web-clone-airbnb/static/js/2.e8d616d4.chunk.js.LICENSE.txt"
+    "static/css/2.a1840750.chunk.css.map": "/web-clone-airbnb/static/css/2.a1840750.chunk.css.map",
+    "static/css/main.ae532943.chunk.css.map": "/web-clone-airbnb/static/css/main.ae532943.chunk.css.map",
+    "static/js/2.32b4de34.chunk.js.LICENSE.txt": "/web-clone-airbnb/static/js/2.32b4de34.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c82694e0.js",
-    "static/js/2.e8d616d4.chunk.js",
-    "static/css/main.cb427e6d.chunk.css",
-    "static/js/main.72f1c9d6.chunk.js"
+    "static/css/2.a1840750.chunk.css",
+    "static/js/2.32b4de34.chunk.js",
+    "static/css/main.ae532943.chunk.css",
+    "static/js/main.bfa7bd8c.chunk.js"
   ]
 }
