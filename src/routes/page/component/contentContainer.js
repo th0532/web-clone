@@ -72,6 +72,27 @@ const MainList = () =>{
 }
 
 const Online = () => {
+    const online_grid_item = [
+        {
+            itemClassId:"item_img1",
+            itemDescText1:"볼티모어의 '식물 닥터'에게서 식물",
+            itemDescText2:"번식법을 배워보세요."
+        },
+        {
+            itemClassId:"item_img2",
+            itemDescText1:"스트레칭을 하고, 호흡을 가다듬고, 긴장을 풀어보세요. 친구와 함께하는 요가 클래스."
+        },
+        {
+            itemClassId:"item_img3",
+            itemDescText1:"암스테르담에 사는 제니스와 함께 음악을 들으며 명상하기"
+        },
+        {
+            itemClassId:"item_img4",
+            itemDescText1:"존과 함께 그림 그리며 아프리카 펭귄에게",
+            itemDescText2:"도움의 손길보내기"
+
+        },
+    ]
     return(
         <div className={"online_container"}>
             <div className={"online_desc"}>
@@ -86,13 +107,15 @@ const Online = () => {
                 </div>
             </div>
             <div className={"online_grid"}>
-                <div className={"item"}>item</div>
-                <div className={"item"}>item</div>
-                <div className={"item"}>item</div>
-                <div className={"item"}>item</div>
+                {online_grid_item.map((data, index)=>(
+                    <div className={"item " + data.itemClassId}>
+                        <div className={"item_desc"}>
+                            <p>{data.itemDescText1}</p>
+                            <p>{data.itemDescText2}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
-
-            
         </div>
     )
 }
