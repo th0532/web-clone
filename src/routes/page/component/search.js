@@ -1,86 +1,70 @@
-import React,{useState} from "react";
+import React,{useState, useRef } from "react";
 import "./componentCSS/search.css";
+import SearchPannel2 from "./searchPannel2";
+import SearchPannel3 from "./searchPannel3";
+
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { DateRangePicker } from 'react-date-range';
+import { addDays } from 'date-fns';
+
 // search 
 const Search = () => {
-    const [search1, setClick1] = useState("isNotActive")
-    const [search2, setClick2] = useState("isNotActive")
-    const [search3, setClick3] = useState("isNotActive")
-    const [display, setDisplay] = useState("none");
+    // datepicker
+    const [state, setState] = useState([
+        {
+          startDate: new Date(),
+          endDate: addDays(new Date(), 7),
+          key: 'selection',
+        }
+      ]);
+      
 
-    const [guest_sum_value, setGuestValue] = useState(0)
+    // searchpannel Click background css
+    const [search1, setClick1] = useState("isNotBackgroundColor")
+    const [search2, setClick2] = useState("isNotBackgroundColor")
+    const [search3, setClick3] = useState("isNotBackgroundColor")
 
-    const [guest_adult, setGuestAdult] = useState(0)
-    const [guest_child, setGuestChild] = useState(0)
-    const [guest_etc, setGuestEtc] = useState(0)
-
-    const [guest_button_adult_minus, setGuestAdultMinusButton] = useState("button_isNotActive")
-    const [guest_button_adult_plus, setGuestAdultButton] = useState("button_isActive")
-    const [guest_button_child_minus, setGuestChildMinusButton] = useState("button_isNotActive")
-    const [guest_button_child_plus, setGuestChildButton] = useState("button_isActive")
-    const [guest_button_etc_minus, setGuestEtcMinusButton] = useState("button_isNotActive")
-    const [guest_button_etc_plus, setGuestEtcButton] = useState("button_isActive")
-
+    // searchpannel Click Submenu on off
+    const [searchClickList2, searchList2] = useState(false);
+    const [searchClickList3, searchList3] = useState(false);
+    
+    // search1 클릭시 focus   
+    const inputEl = useRef(null);
+    
+    // search pannel 클릭 이벤트
     const handleClick1 = () =>{
-        setClick1("isActive");
-        setClick2("isNotActive");
-        setClick3("isNotActive");
-        setDisplay("none");
+        setClick1("isBackgroundColor");
+        setClick2("isNotBackgroundColor");
+        setClick3("isNotBackgroundColor");
+        searchList2(false);
+        inputEl.current.focus();
     }
     const handleClick2 = () =>{
-        setClick1("isNotActive");
-        setClick2("isActive");
-        setClick3("isNotActive");
-        setDisplay("none");
+        setClick1("isNotBackgroundColor");
+        setClick2("isBackgroundColor");
+        setClick3("isNotBackgroundColor");
+        searchList2(true);
+        searchList3(false);
     }
     const handleClick3 = () =>{
-        setClick1("isNotActive");
-        setClick2("isNotActive");
-        setClick3("isActive");
-        setDisplay("block");
+        setClick1("isNotBackgroundColor");
+        setClick2("isNotBackgroundColor");
+        setClick3("isBackgroundColor");
+        searchList2(false);
+        searchList3(true);
     }
-   
-    const guest_plus = (type,currentValue) =>{
-        if(type === "adult"){
-            setGuestAdult(currentValue);
-            setGuestAdultMinusButton("button_isActive");
-            setGuestValue(guest_sum_value+1)
-        }else if (type === "child"){
-            setGuestChild(currentValue);
-            setGuestChildMinusButton("button_isActive");
-            setGuestValue(guest_sum_value+1)
-        }else{
-            setGuestEtc(currentValue);
-            setGuestEtcMinusButton("button_isActive");
-            setGuestValue(guest_sum_value+1)
-        }
+
+    //search 인원 선택시 총 인원 표츌
+    const [guest_sum_value , setGuestValue] = useState(0)
+
+    const plus = () => {
+        setGuestValue(guest_sum_value+1);
     }
-    const guest_minus = (type,currentValue) =>{
-        if(type === "adult"){
-            if(currentValue>=0){
-                setGuestAdult(currentValue);
-                setGuestValue(guest_sum_value-1)
-                if(currentValue === 0){
-                    setGuestAdultMinusButton("button_isNotActive");
-                }
-            }
-        }else if (type === "child"){
-            if(currentValue>=0){
-                setGuestChild(currentValue);
-                setGuestValue(guest_sum_value-1)
-                if(currentValue === 0){
-                    setGuestChildMinusButton("button_isNotActive");
-                }
-            }
-        }else{
-            if(currentValue>=0){
-                setGuestEtc(currentValue);
-                setGuestValue(guest_sum_value-1)
-                if(currentValue === 0){
-                    setGuestEtcMinusButton("button_isNotActive");
-                }
-            }
-        }
+    const minus = () => {
+        setGuestValue(guest_sum_value-1);
     }
+
 
     return(
         <div className="search">
@@ -94,59 +78,42 @@ const Search = () => {
                     </ul>
                 </div>
                 <div className="search_content">
-                    <div className={"location "+ search1 } onClick={handleClick1}>
-                        <p>위치</p>
-                        <input placeholder="어디로 여행가세요?"></input>
+                    <div className={"location "+ search1} onClick={handleClick1}>
+                        <div className="search_item_wrap">
+                            <p className={"search_title"}>위치</p>
+                            <input ref={inputEl} placeholder="어디로 여행가세요?"></input>
+                        </div>
                     </div>
+
                     <div className={"check_date "+ search2} onClick={handleClick2}>
-                        <p>체크인/체크아웃</p>
-                        <input placeholder="날짜추가"></input>
+                        <div className="search_item_wrap">
+                            <p className={"search_title"}>체크인/체크아웃</p>
+                            <div className="datepicker"> 
+                                {
+                                    searchClickList2 && 
+                                    <DateRangePicker
+                                        onChange={item => setState([item.selection])}
+                                        showSelectionPreview={true}
+                                        moveRangeOnFirstSelection={false}
+                                        months={2}
+                                        ranges={state}
+                                        direction="horizontal"
+                                    />
+                                }
+                            </div>
+                        </div>
                     </div>
 
                     <div className={"personnel "+ search3} onClick={handleClick3}>
-                        <div className="personnel_div">
-                            <p>인원</p>
+                        <div className="search_item_wrap">
+                            <p className={"search_title"}>인원</p>
                             {guest_sum_value === 0
-                                ?<div className={"guest_sum_value_zero"}>게스트 추가</div>
-                                :<div className={"guest_sum_value"}>{"게스트 "+guest_sum_value+"명"}</div>
+                            ?<div class="guest_sum_value_zero">게스트 선택</div>
+                            :<div class="guest_sum_value">게스트 {guest_sum_value}명</div>
                             }
                         </div>
-                        <div className={"guest_item "+display}>
-                            <ul>
-                                <li>
-                                    <div className="guest_info">
-                                        <h2>성인</h2>
-                                        <span>만 13세 이상</span>
-                                    </div>
-                                    <div className="guest_count">
-                                        <button className={guest_button_adult_minus} onClick={()=>guest_minus("adult",guest_adult-1)}>-</button>
-                                        <span>{guest_adult}</span>
-                                        <button className={guest_button_adult_plus} onClick={()=>guest_plus("adult",guest_adult+1)}>+</button>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="guest_info">
-                                        <h2>어린이</h2>
-                                        <span>2~12세</span>
-                                    </div>
-                                    <div className="guest_count">
-                                        <button className={guest_button_child_minus} onClick={()=>guest_minus("child",guest_child-1)}>-</button>
-                                        <span>{guest_child}</span>
-                                        <button className={guest_button_child_plus} onClick={()=>guest_plus("child",guest_child+1)}>+</button>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="guest_info">
-                                        <h2>유아</h2>
-                                        <span>2세 미만</span>
-                                    </div>
-                                    <div className="guest_count">
-                                        <button className={guest_button_etc_minus} onClick={()=>guest_minus("etc",guest_etc-1)}>-</button>
-                                        <span>{guest_etc}</span>
-                                        <button className={guest_button_etc_plus} onClick={()=>guest_plus("etc",guest_etc+1)}>+</button>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div>
+                            {searchClickList3 && <SearchPannel3 plus={plus} minus={minus}></SearchPannel3>}
                         </div>
                     </div>
                         
@@ -159,4 +126,6 @@ const Search = () => {
     )
 } 
 
+
+                    
 export default Search;
