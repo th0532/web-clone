@@ -1,0 +1,31 @@
+.newInfomation{
+    padding:50px;
+    background-color: rgb(247, 247, 247);
+}
+.newInfomation h1{
+    font-size: 22px;
+}
+.newInfomation_wrap{
+    display: flex;
+    margin-top:50px;
+}
+.newInfomation_wrap section{
+    flex:1;
+}
+.newInfomation_wrap section h2{
+    font-size: 20px;
+    padding:15px 0px;
+    font-weight: 400;
+}
+.newInfomation_wrap section a{
+    padding:15px 0px;
+    display: inline-block;
+    border-top:1px solid #e3e3e3;
+    width:92%;
+}
+.newInfomation_wrap section span:nth-child(1){
+    width:100%;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+}

@@ -1,0 +1,11 @@
+.siteMapSection{
+    display: flex;
+    padding:50px;
+    background-color: rgb(247, 247, 247);
+}
+.siteMapSection section{
+    flex:1;
+}
+.siteMapSection section ul li{
+    padding-top:10px;
+}
