@@ -1,0 +1,38 @@
+.footer{
+    padding: 50px 90px;
+    background-color: rgb(247, 247, 247);
+    border-top:1px solid #dddddd;
+}
+.leftMenu{
+    float:left;
+}
+.footerList, .copyright{
+    float:left;
+}
+.footerList ul{
+    margin-left:50px;
+}
+.footerList ul li{
+    float:left;
+    list-style: circle;
+    margin-left:28px;
+}
+.rightMenu{
+    float:right;
+}
+.country{
+    float:left;
+    margin-right:50px;
+}
+.country a{
+    margin-left:30px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.SNS{
+    float:right;
+}
+.SNS ul li{
+    float:left;
+    padding-left:10px;
+}
